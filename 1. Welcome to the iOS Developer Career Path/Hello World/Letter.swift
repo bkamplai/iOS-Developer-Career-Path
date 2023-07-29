@@ -1,0 +1,5 @@
+print("Date: Apr 22, 2023\n")
+print("Dear Self,\n")
+print("My goal for this course is to get a basic understanding of swift.\n")
+print("Sincearly,")
+print("Brandon Kamplain")
