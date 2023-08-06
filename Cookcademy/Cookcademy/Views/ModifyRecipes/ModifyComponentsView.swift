@@ -1,5 +1,5 @@
 //
-//  ModifyIngredientsView.swift
+//  ModifyComponentsView.swift
 //  Cookcademy
 //
 //  Created by Brandon Kamplain on 8/5/23.
