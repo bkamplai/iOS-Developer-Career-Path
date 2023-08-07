@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol RecipeCompenent: CustomStringConvertible {
+protocol RecipeCompenent: CustomStringConvertible, Codable {
     init()
     static func singularName() -> String
     static func pluralName() -> String
