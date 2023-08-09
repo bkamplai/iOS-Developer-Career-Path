@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F105C7B62A83178700C9DB47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105C7B52A83178700C9DB47 /* User.swift */; };
 		F1214DCB2A81CAC600232267 /* UserFetchingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1214DCA2A81CAC600232267 /* UserFetchingClient.swift */; };
 		F1214DCD2A81CC9300232267 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1214DCC2A81CC9300232267 /* UserData.swift */; };
 		F1B9CB852A81C98E003C4146 /* RandomUsersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9CB842A81C98E003C4146 /* RandomUsersApp.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F105C7B52A83178700C9DB47 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1214DCA2A81CAC600232267 /* UserFetchingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFetchingClient.swift; sourceTree = "<group>"; };
 		F1214DCC2A81CC9300232267 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F1B9CB812A81C98E003C4146 /* RandomUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				F1214DCA2A81CAC600232267 /* UserFetchingClient.swift */,
 				F1214DCC2A81CC9300232267 /* UserData.swift */,
 				F1BFD2F02A81CE05007E3715 /* UsersView.swift */,
+				F105C7B52A83178700C9DB47 /* User.swift */,
 				F1B9CB882A81C993003C4146 /* Assets.xcassets */,
 				F1B9CB8A2A81C993003C4146 /* Preview Content */,
 			);
@@ -268,6 +271,7 @@
 			files = (
 				F1BFD2F12A81CE05007E3715 /* UsersView.swift in Sources */,
 				F1B9CB872A81C98E003C4146 /* ContentView.swift in Sources */,
+				F105C7B62A83178700C9DB47 /* User.swift in Sources */,
 				F1B9CB852A81C98E003C4146 /* RandomUsersApp.swift in Sources */,
 				F1214DCD2A81CC9300232267 /* UserData.swift in Sources */,
 				F1214DCB2A81CAC600232267 /* UserFetchingClient.swift in Sources */,
