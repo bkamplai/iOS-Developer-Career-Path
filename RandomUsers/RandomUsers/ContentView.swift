@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var userData = UserData()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List(userData.users) { user in
+                Text(user.fullName)
+            }
+            .navigationTitle("Random Users")
         }
-        .padding()
     }
 }
 
