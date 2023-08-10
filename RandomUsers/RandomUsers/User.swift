@@ -10,6 +10,7 @@ import Foundation
 struct User: Identifiable, Decodable {
     let id: String
     let name: Name
+    let picture: Picture
     
     var fullName: String {
         name.title + ". " + name.first + " " + name.last
@@ -20,11 +21,13 @@ struct User: Identifiable, Decodable {
         name = try values.decode(Name.self, forKey: .name)
         let loginInfo = try values.nestedContainer(keyedBy: LoginInfoCodingKeys.self, forKey: .login)
         id = try loginInfo.decode(String.self, forKey: .uuid)
+        picture = try values.decode(Picture.self, forKey: .picture)
     }
     
     enum CodingKeys: String, CodingKey {
         case login
         case name
+        case picture
     }
     
     enum LoginInfoCodingKeys: String, CodingKey {
@@ -44,4 +47,10 @@ struct Response: Decodable {
     enum CodingKeys: String, CodingKey {
         case users = "results"
     }
+}
+
+struct Picture: Decodable {
+    let large: String
+    let medium: String
+    let thumbnail: String
 }
