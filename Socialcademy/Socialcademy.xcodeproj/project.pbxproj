@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F105C8372A85C03300C9DB47 /* SocialcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105C8362A85C03300C9DB47 /* SocialcademyApp.swift */; };
-		F105C8392A85C03300C9DB47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105C8382A85C03300C9DB47 /* ContentView.swift */; };
 		F105C83B2A85C03500C9DB47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F105C83A2A85C03500C9DB47 /* Assets.xcassets */; };
 		F105C83E2A85C03500C9DB47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F105C83D2A85C03500C9DB47 /* Preview Assets.xcassets */; };
 		F105C8462A85C1E100C9DB47 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F105C8452A85C1E100C9DB47 /* FirebaseAnalytics */; };
 		F105C8482A85C1E100C9DB47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F105C8472A85C1E100C9DB47 /* FirebaseFirestore */; };
 		F105C84A2A85C1E100C9DB47 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F105C8492A85C1E100C9DB47 /* FirebaseFirestoreSwift */; };
 		F105C84C2A85C39D00C9DB47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F105C84B2A85C39D00C9DB47 /* GoogleService-Info.plist */; };
+		F105C8542A85C9F700C9DB47 /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105C8532A85C9F700C9DB47 /* PostsList.swift */; };
+		F105C8552A85CC0600C9DB47 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105C8512A85C5AE00C9DB47 /* Post.swift */; };
+		F107B8522A85CFC40082631E /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8512A85CFC40082631E /* PostRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F105C8332A85C03300C9DB47 /* Socialcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socialcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F105C8362A85C03300C9DB47 /* SocialcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialcademyApp.swift; sourceTree = "<group>"; };
-		F105C8382A85C03300C9DB47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F105C83A2A85C03500C9DB47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F105C83D2A85C03500C9DB47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F105C84B2A85C39D00C9DB47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F105C8512A85C5AE00C9DB47 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Socialcademy/Models/Post.swift; sourceTree = SOURCE_ROOT; };
+		F105C8532A85C9F700C9DB47 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostsList.swift; path = Socialcademy/Views/PostsList.swift; sourceTree = SOURCE_ROOT; };
+		F107B8512A85CFC40082631E /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +63,10 @@
 		F105C8352A85C03300C9DB47 /* Socialcademy */ = {
 			isa = PBXGroup;
 			children = (
-				F105C84B2A85C39D00C9DB47 /* GoogleService-Info.plist */,
 				F105C8362A85C03300C9DB47 /* SocialcademyApp.swift */,
-				F105C8382A85C03300C9DB47 /* ContentView.swift */,
-				F105C83A2A85C03500C9DB47 /* Assets.xcassets */,
-				F105C83C2A85C03500C9DB47 /* Preview Content */,
+				F105C8502A85C57F00C9DB47 /* Models */,
+				F105C84D2A85C49900C9DB47 /* Views */,
+				F105C84F2A85C4F200C9DB47 /* Resources */,
 			);
 			path = Socialcademy;
 			sourceTree = "<group>";
@@ -74,6 +77,33 @@
 				F105C83D2A85C03500C9DB47 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F105C84D2A85C49900C9DB47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F105C8532A85C9F700C9DB47 /* PostsList.swift */,
+				F107B8512A85CFC40082631E /* PostRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F105C84F2A85C4F200C9DB47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F105C84B2A85C39D00C9DB47 /* GoogleService-Info.plist */,
+				F105C83A2A85C03500C9DB47 /* Assets.xcassets */,
+				F105C83C2A85C03500C9DB47 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F105C8502A85C57F00C9DB47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F105C8512A85C5AE00C9DB47 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F105C8392A85C03300C9DB47 /* ContentView.swift in Sources */,
+				F105C8552A85CC0600C9DB47 /* Post.swift in Sources */,
 				F105C8372A85C03300C9DB47 /* SocialcademyApp.swift in Sources */,
+				F107B8522A85CFC40082631E /* PostRow.swift in Sources */,
+				F105C8542A85C9F700C9DB47 /* PostsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Socialcademy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Socialcademy/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 7829FZ7A7M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -319,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Socialcademy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Socialcademy/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 7829FZ7A7M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
