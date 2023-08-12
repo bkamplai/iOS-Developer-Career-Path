@@ -7,10 +7,9 @@
 
 class Plane {
     let name: String
-    let pilot: Pilot
-    init(name: String, pilot: Pilot) {
+    weak var pilot: Pilot?
+    init(name: String) {
         self.name = name
-        self.pilot = pilot
     }
     deinit {
         print("Plane with name \(name) deinit")
@@ -27,5 +26,12 @@ class Pilot {
     }
 }
 
-var kittyHawk: Plane? = Plane(name: "Kitty Hawk", pilot: Pilot(name: "Wright Brothers"))
-kittyHawk = nil
+//var kittyHawk: Plane? = Plane(name: "Kitty Hawk", pilot: Pilot(name: "Wright Brothers"))
+//kittyHawk = nil
+
+var lindbergh: Pilot? = Pilot(name: "Charles Lindbergh")
+var plane = Plane(name: "Spririt of St. Louis")
+
+plane.pilot = lindbergh
+lindbergh = nil
+print(plane.pilot?.name ?? "No pilot")
