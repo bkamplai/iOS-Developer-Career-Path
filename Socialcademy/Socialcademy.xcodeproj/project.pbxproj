@@ -22,6 +22,7 @@
 		F1CF088F2A87F27000AD82BC /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF088E2A87F27000AD82BC /* PostsRepository.swift */; };
 		F1CF08922A87FD6400AD82BC /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08912A87FD6400AD82BC /* Loadable.swift */; };
 		F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08942A8803CE00AD82BC /* EmptyListView.swift */; };
+		F1CF08BD2A882BA200AD82BC /* Alert+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08BC2A882BA200AD82BC /* Alert+Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F1CF088E2A87F27000AD82BC /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
 		F1CF08912A87FD6400AD82BC /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		F1CF08942A8803CE00AD82BC /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		F1CF08BC2A882BA200AD82BC /* Alert+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				F1CF08942A8803CE00AD82BC /* EmptyListView.swift */,
+				F1CF08BC2A882BA200AD82BC /* Alert+Error.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				F107B8522A85CFC40082631E /* PostRow.swift in Sources */,
 				F1CF08922A87FD6400AD82BC /* Loadable.swift in Sources */,
 				F105C8542A85C9F700C9DB47 /* PostsList.swift in Sources */,
+				F1CF08BD2A882BA200AD82BC /* Alert+Error.swift in Sources */,
 				F107B8542A87202B0082631E /* NewPostForm.swift in Sources */,
 				F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */,
 			);
