@@ -18,6 +18,7 @@ class Plane {
 
 class Pilot {
     let name: String
+    var plane: Plane?
     init(name: String) {
         self.name = name
     }
@@ -35,3 +36,11 @@ var plane = Plane(name: "Spririt of St. Louis")
 plane.pilot = lindbergh
 lindbergh = nil
 print(plane.pilot?.name ?? "No pilot")
+
+var redBaron: Pilot? = Pilot(name: "Manfred von Ricthofen")
+var triplane: Plane? = Plane(name: "Fokker Dr.I")
+redBaron?.plane = triplane
+triplane?.pilot = redBaron
+
+redBaron = nil
+triplane = nil
