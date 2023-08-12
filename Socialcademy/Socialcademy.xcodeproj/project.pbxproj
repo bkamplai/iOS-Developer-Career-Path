@@ -20,6 +20,8 @@
 		F107B8542A87202B0082631E /* NewPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8532A87202B0082631E /* NewPostForm.swift */; };
 		F107B8572A8724070082631E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8562A8724070082631E /* PostViewModel.swift */; };
 		F1CF088F2A87F27000AD82BC /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF088E2A87F27000AD82BC /* PostsRepository.swift */; };
+		F1CF08922A87FD6400AD82BC /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08912A87FD6400AD82BC /* Loadable.swift */; };
+		F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08942A8803CE00AD82BC /* EmptyListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F107B8532A87202B0082631E /* NewPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostForm.swift; sourceTree = "<group>"; };
 		F107B8562A8724070082631E /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		F1CF088E2A87F27000AD82BC /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		F1CF08912A87FD6400AD82BC /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		F1CF08942A8803CE00AD82BC /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +73,11 @@
 		F105C8352A85C03300C9DB47 /* Socialcademy */ = {
 			isa = PBXGroup;
 			children = (
+				F105C8362A85C03300C9DB47 /* SocialcademyApp.swift */,
+				F1CF08932A8803A600AD82BC /* Supporting Views */,
+				F1CF08902A87FD4800AD82BC /* Utilities */,
 				F1CF088D2A87F24900AD82BC /* Repositories */,
 				F107B8552A8723EA0082631E /* View Models */,
-				F105C8362A85C03300C9DB47 /* SocialcademyApp.swift */,
 				F105C8502A85C57F00C9DB47 /* Models */,
 				F105C84D2A85C49900C9DB47 /* Views */,
 				F105C84F2A85C4F200C9DB47 /* Resources */,
@@ -129,6 +135,22 @@
 				F1CF088E2A87F27000AD82BC /* PostsRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F1CF08902A87FD4800AD82BC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF08912A87FD6400AD82BC /* Loadable.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F1CF08932A8803A600AD82BC /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF08942A8803CE00AD82BC /* EmptyListView.swift */,
+			);
+			path = "Supporting Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +237,10 @@
 				F1CF088F2A87F27000AD82BC /* PostsRepository.swift in Sources */,
 				F105C8372A85C03300C9DB47 /* SocialcademyApp.swift in Sources */,
 				F107B8522A85CFC40082631E /* PostRow.swift in Sources */,
+				F1CF08922A87FD6400AD82BC /* Loadable.swift in Sources */,
 				F105C8542A85C9F700C9DB47 /* PostsList.swift in Sources */,
 				F107B8542A87202B0082631E /* NewPostForm.swift in Sources */,
+				F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
