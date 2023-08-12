@@ -23,6 +23,7 @@
 		F1CF08922A87FD6400AD82BC /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08912A87FD6400AD82BC /* Loadable.swift */; };
 		F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08942A8803CE00AD82BC /* EmptyListView.swift */; };
 		F1CF08BD2A882BA200AD82BC /* Alert+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08BC2A882BA200AD82BC /* Alert+Error.swift */; };
+		F1CF08BF2A883D1300AD82BC /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF08BE2A883D1300AD82BC /* PostRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F1CF08912A87FD6400AD82BC /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		F1CF08942A8803CE00AD82BC /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		F1CF08BC2A882BA200AD82BC /* Alert+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Error.swift"; sourceTree = "<group>"; };
+		F1CF08BE2A883D1300AD82BC /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				F107B8562A8724070082631E /* PostViewModel.swift */,
+				F1CF08BE2A883D1300AD82BC /* PostRowViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CF08BF2A883D1300AD82BC /* PostRowViewModel.swift in Sources */,
 				F107B8572A8724070082631E /* PostViewModel.swift in Sources */,
 				F105C8552A85CC0600C9DB47 /* Post.swift in Sources */,
 				F1CF088F2A87F27000AD82BC /* PostsRepository.swift in Sources */,
