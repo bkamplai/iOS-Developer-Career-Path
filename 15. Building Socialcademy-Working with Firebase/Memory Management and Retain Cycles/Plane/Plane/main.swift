@@ -7,9 +7,21 @@
 
 class Plane {
     let name: String
+    var printDescription: (() -> Void)!
     weak var pilot: Pilot?
     init(name: String) {
         self.name = name
+        configurePrintDescription()
+    }
+    private func configurePrintDescription() {
+        printDescription = { [weak self] in
+            let planeName = self?.name ?? "No Name"
+            if let pilot = self?.pilot {
+                print("This is a plane named \(planeName) with a pilot named \(pilot.name)")
+            } else {
+                print("This is a plane named \(planeName) with no current pilot")
+            }
+        }
     }
     deinit {
         print("Plane with name \(name) deinit")
@@ -44,3 +56,10 @@ triplane?.pilot = redBaron
 
 redBaron = nil
 triplane = nil
+
+var coleman: Pilot? = Pilot(name: "Bessie Coleman")
+var biplane: Plane? = Plane(name: "Jenny - JN-4")
+biplane?.pilot = coleman
+biplane?.printDescription()
+
+biplane = nil
