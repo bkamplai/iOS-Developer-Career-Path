@@ -11,10 +11,25 @@ import Foundation
 class PostViewModel: ObservableObject {
     @Published var posts: Loadable<[Post]> = .loading
     
-    private let postsRepository: PostsRepositoryProtocol
+    enum Filter {
+        case all, favorites
+    }
     
-    init(postsRepository: PostsRepositoryProtocol = PostsRepository()) {
+    private let postsRepository: PostsRepositoryProtocol
+    private let filter: Filter
+    
+    init(filter: Filter = .all, postsRepository: PostsRepositoryProtocol = PostsRepository()) {
+        self.filter = filter
         self.postsRepository = postsRepository
+    }
+    
+    var title: String {
+        switch filter {
+        case .all:
+            return "Posts"
+        case .favorites:
+            return "Favorites"
+        }
     }
     
     func makeCreatAction() -> NewPostForm.CreateAction {
@@ -27,7 +42,7 @@ class PostViewModel: ObservableObject {
     func fetchPosts() {
         Task {
             do {
-                posts = .loaded(try await postsRepository.fetchPosts())
+                posts = .loaded(try await postsRepository.fetchPosts(matching: filter))
             } catch {
                 print("[PostViewModel] Cannot fetch posts: \(error)")
                 posts = .error(error)
@@ -49,5 +64,16 @@ class PostViewModel: ObservableObject {
                 self?.posts.value?[i].isFavorite = newValue
             }
         )
+    }
+}
+
+private extension PostsRepositoryProtocol {
+    func fetchPosts(matching filter: PostViewModel.Filter) async throws -> [Post] {
+        switch filter {
+        case .all:
+            return try await fetchAllPosts()
+        case .favorites:
+            return try await fetchFavoritePosts()
+        }
     }
 }
