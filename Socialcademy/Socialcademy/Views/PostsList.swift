@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct PostsList: View {
-    @StateObject var viewModel = PostViewModel()
+    @StateObject var viewModel: PostsViewModel
     
     @State private var searchText = ""
     @State private var showNewPostForm = false
     
     var body: some View {
-        NavigationView {
-            Group {
-                switch viewModel.posts {
-                case .loading:
-                    ProgressView()
-                case let .error(error):
-                    EmptyListView(
-                        title: "Cannot Load Posts",
-                        message: error.localizedDescription,
-                        retryAction: {
-                            viewModel.fetchPosts()
-                        }
-                    )
-                case .empty:
-                    EmptyListView(
-                        title: "No Posts",
-                        message: "There aren't any posts yet."
-                    )
-                case let .loaded(posts):
-                    List(posts) { post in
+        Group {
+            switch viewModel.posts {
+            case .loading:
+                ProgressView()
+            case let .error(error):
+                EmptyListView(
+                    title: "Cannot Load Posts",
+                    message: error.localizedDescription,
+                    retryAction: {
+                        viewModel.fetchPosts()
+                    }
+                )
+            case .empty:
+                EmptyListView(
+                    title: "No Posts",
+                    message: "There aren't any posts yet."
+                )
+            case let .loaded(posts):
+                ScrollView {
+                    ForEach(posts) { post in
                         if searchText.isEmpty || post.contains(searchText) {
                             PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
                         }
@@ -42,20 +42,20 @@ struct PostsList: View {
                     .animation(.default, value: posts)
                 }
             }
-            .navigationTitle(viewModel.title)
-            .toolbar {
-                Button {
-                    showNewPostForm = true
-                } label: {
-                    Label("New Post", systemImage: "square.and.pencil")
-                }
-            }
-            .sheet(isPresented: $showNewPostForm) {
-                NewPostForm(createAction: viewModel.makeCreatAction())
-            }
         }
+        .navigationTitle(viewModel.title)
         .onAppear {
             viewModel.fetchPosts()
+        }
+        .sheet(isPresented: $showNewPostForm) {
+            NewPostForm(viewModel: viewModel.makeNewPostViewModel())
+        }
+        .toolbar {
+            Button {
+                showNewPostForm = true
+            } label: {
+                Label("New Post", systemImage: "square.and.pencil")
+            }
         }
     }
 }
@@ -68,8 +68,10 @@ struct PostList_Previews: PreviewProvider {
         
         var body: some View {
             let postsRepository = PostRepositoryStub(state: state)
-            let viewModel = PostViewModel(postsRepository: postsRepository)
-            PostsList(viewModel: viewModel)
+            let viewModel = PostsViewModel(postsRepository: postsRepository)
+            NavigationView {
+                PostsList(viewModel: viewModel)
+            }
         }
     }
     

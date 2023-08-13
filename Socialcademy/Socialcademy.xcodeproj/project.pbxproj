@@ -18,7 +18,9 @@
 		F105C8552A85CC0600C9DB47 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105C8512A85C5AE00C9DB47 /* Post.swift */; };
 		F107B8522A85CFC40082631E /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8512A85CFC40082631E /* PostRow.swift */; };
 		F107B8542A87202B0082631E /* NewPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8532A87202B0082631E /* NewPostForm.swift */; };
-		F107B8572A8724070082631E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8562A8724070082631E /* PostViewModel.swift */; };
+		F107B8572A8724070082631E /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8562A8724070082631E /* PostsViewModel.swift */; };
+		F10EDCE92A88961000E073D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCE82A88961000E073D0 /* User.swift */; };
+		F10EDCEB2A889A6F00E073D0 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCEA2A889A6F00E073D0 /* ViewModelFactory.swift */; };
 		F1BF819A2A88544E0080A0A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1BF81992A88544E0080A0A9 /* FirebaseAuth */; };
 		F1BF819D2A8854E90080A0A9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF819C2A8854E90080A0A9 /* AuthService.swift */; };
 		F1BF819F2A88579B0080A0A9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF819E2A88579B0080A0A9 /* AuthViewModel.swift */; };
@@ -44,7 +46,9 @@
 		F105C8532A85C9F700C9DB47 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostsList.swift; path = Socialcademy/Views/PostsList.swift; sourceTree = SOURCE_ROOT; };
 		F107B8512A85CFC40082631E /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		F107B8532A87202B0082631E /* NewPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostForm.swift; sourceTree = "<group>"; };
-		F107B8562A8724070082631E /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		F107B8562A8724070082631E /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		F10EDCE82A88961000E073D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F10EDCEA2A889A6F00E073D0 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		F1BF819C2A8854E90080A0A9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F1BF819E2A88579B0080A0A9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F1BF81A02A8858D10080A0A9 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F105C8512A85C5AE00C9DB47 /* Post.swift */,
+				F10EDCE82A88961000E073D0 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,10 +154,11 @@
 		F107B8552A8723EA0082631E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				F107B8562A8724070082631E /* PostViewModel.swift */,
+				F107B8562A8724070082631E /* PostsViewModel.swift */,
 				F1CF08BE2A883D1300AD82BC /* PostRowViewModel.swift */,
 				F1BF819E2A88579B0080A0A9 /* AuthViewModel.swift */,
 				F1BF81A42A885B270080A0A9 /* FormViewModel.swift */,
+				F10EDCEA2A889A6F00E073D0 /* ViewModelFactory.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -280,7 +286,7 @@
 			files = (
 				F1BF81A72A88672C0080A0A9 /* PrimaryButtonStyle.swift in Sources */,
 				F1CF08BF2A883D1300AD82BC /* PostRowViewModel.swift in Sources */,
-				F107B8572A8724070082631E /* PostViewModel.swift in Sources */,
+				F107B8572A8724070082631E /* PostsViewModel.swift in Sources */,
 				F105C8552A85CC0600C9DB47 /* Post.swift in Sources */,
 				F1CF088F2A87F27000AD82BC /* PostsRepository.swift in Sources */,
 				F105C8372A85C03300C9DB47 /* SocialcademyApp.swift in Sources */,
@@ -291,11 +297,13 @@
 				F105C8542A85C9F700C9DB47 /* PostsList.swift in Sources */,
 				F1CF08BD2A882BA200AD82BC /* Alert+Error.swift in Sources */,
 				F1BF819F2A88579B0080A0A9 /* AuthViewModel.swift in Sources */,
+				F10EDCEB2A889A6F00E073D0 /* ViewModelFactory.swift in Sources */,
 				F1BF81A12A8858D10080A0A9 /* AuthView.swift in Sources */,
 				F107B8542A87202B0082631E /* NewPostForm.swift in Sources */,
 				F1BF81A52A885B270080A0A9 /* FormViewModel.swift in Sources */,
 				F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */,
 				F1CF08C12A8848D200AD82BC /* MainTabView.swift in Sources */,
+				F10EDCE92A88961000E073D0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
