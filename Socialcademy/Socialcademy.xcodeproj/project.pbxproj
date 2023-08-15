@@ -21,6 +21,14 @@
 		F107B8572A8724070082631E /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107B8562A8724070082631E /* PostsViewModel.swift */; };
 		F10EDCE92A88961000E073D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCE82A88961000E073D0 /* User.swift */; };
 		F10EDCEB2A889A6F00E073D0 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCEA2A889A6F00E073D0 /* ViewModelFactory.swift */; };
+		F10EDCED2A8975B000E073D0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCEC2A8975B000E073D0 /* Comment.swift */; };
+		F10EDCEF2A8976D200E073D0 /* CommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCEE2A8976D200E073D0 /* CommentsRepository.swift */; };
+		F10EDCF12A897A6100E073D0 /* Firestore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCF02A897A6100E073D0 /* Firestore+Extensions.swift */; };
+		F10EDCF32A89BCA400E073D0 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCF22A89BCA400E073D0 /* CommentsViewModel.swift */; };
+		F10EDCF52A89BFA700E073D0 /* CommentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCF42A89BFA700E073D0 /* CommentsList.swift */; };
+		F10EDCF72A89C22600E073D0 /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCF62A89C22600E073D0 /* CommentRow.swift */; };
+		F10EDCF92A8B18B900E073D0 /* CommentRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCF82A8B18B900E073D0 /* CommentRowViewModel.swift */; };
+		F10EDCFB2A8B1B9800E073D0 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EDCFA2A8B1B9800E073D0 /* ErrorHandler.swift */; };
 		F1BF819A2A88544E0080A0A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1BF81992A88544E0080A0A9 /* FirebaseAuth */; };
 		F1BF819D2A8854E90080A0A9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF819C2A8854E90080A0A9 /* AuthService.swift */; };
 		F1BF819F2A88579B0080A0A9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF819E2A88579B0080A0A9 /* AuthViewModel.swift */; };
@@ -49,6 +57,14 @@
 		F107B8562A8724070082631E /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		F10EDCE82A88961000E073D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F10EDCEA2A889A6F00E073D0 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		F10EDCEC2A8975B000E073D0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F10EDCEE2A8976D200E073D0 /* CommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRepository.swift; sourceTree = "<group>"; };
+		F10EDCF02A897A6100E073D0 /* Firestore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Extensions.swift"; sourceTree = "<group>"; };
+		F10EDCF22A89BCA400E073D0 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		F10EDCF42A89BFA700E073D0 /* CommentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsList.swift; sourceTree = "<group>"; };
+		F10EDCF62A89C22600E073D0 /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
+		F10EDCF82A8B18B900E073D0 /* CommentRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRowViewModel.swift; sourceTree = "<group>"; };
+		F10EDCFA2A8B1B9800E073D0 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F1BF819C2A8854E90080A0A9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F1BF819E2A88579B0080A0A9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F1BF81A02A8858D10080A0A9 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -128,6 +144,8 @@
 				F1CF08C02A8848D200AD82BC /* MainTabView.swift */,
 				F1BF81A02A8858D10080A0A9 /* AuthView.swift */,
 				F1BF81A22A8859AB0080A0A9 /* ProfileView.swift */,
+				F10EDCF42A89BFA700E073D0 /* CommentsList.swift */,
+				F10EDCF62A89C22600E073D0 /* CommentRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +165,7 @@
 			children = (
 				F105C8512A85C5AE00C9DB47 /* Post.swift */,
 				F10EDCE82A88961000E073D0 /* User.swift */,
+				F10EDCEC2A8975B000E073D0 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +178,8 @@
 				F1BF819E2A88579B0080A0A9 /* AuthViewModel.swift */,
 				F1BF81A42A885B270080A0A9 /* FormViewModel.swift */,
 				F10EDCEA2A889A6F00E073D0 /* ViewModelFactory.swift */,
+				F10EDCF22A89BCA400E073D0 /* CommentsViewModel.swift */,
+				F10EDCF82A8B18B900E073D0 /* CommentRowViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -182,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				F1CF088E2A87F27000AD82BC /* PostsRepository.swift */,
+				F10EDCEE2A8976D200E073D0 /* CommentsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -190,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				F1CF08912A87FD6400AD82BC /* Loadable.swift */,
+				F10EDCF02A897A6100E073D0 /* Firestore+Extensions.swift */,
+				F10EDCFA2A8B1B9800E073D0 /* ErrorHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -285,20 +309,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BF81A72A88672C0080A0A9 /* PrimaryButtonStyle.swift in Sources */,
+				F10EDCFB2A8B1B9800E073D0 /* ErrorHandler.swift in Sources */,
+				F10EDCEF2A8976D200E073D0 /* CommentsRepository.swift in Sources */,
 				F1CF08BF2A883D1300AD82BC /* PostRowViewModel.swift in Sources */,
 				F107B8572A8724070082631E /* PostsViewModel.swift in Sources */,
+				F10EDCF92A8B18B900E073D0 /* CommentRowViewModel.swift in Sources */,
+				F10EDCF72A89C22600E073D0 /* CommentRow.swift in Sources */,
 				F105C8552A85CC0600C9DB47 /* Post.swift in Sources */,
 				F1CF088F2A87F27000AD82BC /* PostsRepository.swift in Sources */,
 				F105C8372A85C03300C9DB47 /* SocialcademyApp.swift in Sources */,
 				F107B8522A85CFC40082631E /* PostRow.swift in Sources */,
 				F1BF819D2A8854E90080A0A9 /* AuthService.swift in Sources */,
+				F10EDCF52A89BFA700E073D0 /* CommentsList.swift in Sources */,
 				F1CF08922A87FD6400AD82BC /* Loadable.swift in Sources */,
 				F1BF81A32A8859AB0080A0A9 /* ProfileView.swift in Sources */,
+				F10EDCED2A8975B000E073D0 /* Comment.swift in Sources */,
+				F10EDCF32A89BCA400E073D0 /* CommentsViewModel.swift in Sources */,
 				F105C8542A85C9F700C9DB47 /* PostsList.swift in Sources */,
 				F1CF08BD2A882BA200AD82BC /* Alert+Error.swift in Sources */,
 				F1BF819F2A88579B0080A0A9 /* AuthViewModel.swift in Sources */,
 				F10EDCEB2A889A6F00E073D0 /* ViewModelFactory.swift in Sources */,
 				F1BF81A12A8858D10080A0A9 /* AuthView.swift in Sources */,
+				F10EDCF12A897A6100E073D0 /* Firestore+Extensions.swift in Sources */,
 				F107B8542A87202B0082631E /* NewPostForm.swift in Sources */,
 				F1BF81A52A885B270080A0A9 /* FormViewModel.swift in Sources */,
 				F1CF08952A8803CE00AD82BC /* EmptyListView.swift in Sources */,
