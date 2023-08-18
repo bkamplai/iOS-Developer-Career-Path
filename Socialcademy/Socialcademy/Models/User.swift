@@ -10,7 +10,12 @@ import Foundation
 struct User: Identifiable, Equatable, Codable {
     var id: String
     var name: String
-    static let testUser = User(id: "", name: "Jamie Harris")
+    var imageURL: URL?
+    static let testUser = User(
+        id: "",
+        name: "Jamie Harris",
+        imageURL: URL(string: "https://source.unsplash.com/lw9LrnpUmWw/480x480")
+    )
 }
 
 extension User {
