@@ -16,6 +16,14 @@ func findFactorialIteratively(of n: Int) -> Int {
     return factorial
 }
 
+func findFactorialRecursively(of n: Int) -> Int {
+    if n > 0 {
+        print("Execution context: " + String(n))
+        return findFactorialRecursively(of: n - 1)
+    }
+    return 0
+}
+
 var fourFactorial = findFactorialIteratively(of:4)
 
 print(fourFactorial)
