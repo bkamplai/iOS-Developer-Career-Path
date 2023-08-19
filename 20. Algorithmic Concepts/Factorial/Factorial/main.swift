@@ -19,7 +19,7 @@ func findFactorialIteratively(of n: Int) -> Int {
 func findFactorialRecursively(of n: Int) -> Int {
     if n > 0 {
         print("Execution context: " + String(n))
-        return findFactorialRecursively(of: n - 1)
+        return n * findFactorialRecursively(of: n - 1)
     }
     return 0
 }
@@ -27,4 +27,5 @@ func findFactorialRecursively(of n: Int) -> Int {
 var fourFactorial = findFactorialIteratively(of:4)
 
 print(fourFactorial)
+print(findFactorialRecursively(of: 4))
 
