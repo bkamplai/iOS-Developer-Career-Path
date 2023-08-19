@@ -22,4 +22,14 @@ extension Node: CustomStringConvertible {
 class LinkedList {
     var head: Node?
     var tail: Node?
+    
+    func append(_ data: String) {
+        let newNode = Node(data: data)
+        if let lastNode = tail {
+            lastNode.next = newNode
+        } else {
+            head = newNode
+        }
+        tail = newNode
+    }
 }
