@@ -32,6 +32,16 @@ class LinkedList {
         }
         tail = newNode
     }
+    
+    func getNode(at index: Int) -> Node? {
+        guard index >= 0 else { return nil }
+        var current = head
+        for _ in 0..<index {
+            guard let next = current?.next else { return nil }
+            current = next
+        }
+        return current
+    }
 }
 
 extension LinkedList: CustomStringConvertible {
@@ -45,3 +55,5 @@ germanCars.append("Volkswagen")
 germanCars.append("Porsche")
 germanCars.append("Audi")
 print(germanCars)
+print(germanCars.getNode(at: 1)!)
+print(germanCars.getNode(at: 2)!)
