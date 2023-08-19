@@ -42,6 +42,26 @@ class LinkedList {
         }
         return current
     }
+    
+    func removeNode(from index: Int) -> Node? {
+        var removedNode: Node?
+        guard index >= 0 else { return nil }
+        if index == 0 {
+            removedNode = head
+            head = head?.next
+            if head == nil {
+                tail = nil
+            }
+            return removedNode
+        }
+        guard let previous = getNode(at: index - 1) else { return nil }
+        removedNode = previous.next
+        if removedNode?.next == nil {
+            tail = previous
+        }
+        previous.next = removedNode?.next
+        return removedNode
+    }
 }
 
 extension LinkedList: CustomStringConvertible {
@@ -57,3 +77,5 @@ germanCars.append("Audi")
 print(germanCars)
 print(germanCars.getNode(at: 1)!)
 print(germanCars.getNode(at: 2)!)
+let removedNode = germanCars.removeNode(from: 0)
+print(germanCars)
