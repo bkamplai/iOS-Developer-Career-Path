@@ -6,17 +6,17 @@
 //
 
 class Node {
-  var data: String
-  var next: Node?
-  
-  init(data: String) {
-    self.data = data
-  }
+    var data: String
+    var next: Node?
+    
+    init(data: String) {
+        self.data = data
+    }
 }
 extension Node: CustomStringConvertible {
-  var description: String {
-    return data + " -> " + (next?.description ?? "nil")
-  }
+    var description: String {
+        return data + " -> " + (next?.description ?? "nil")
+    }
 }
 
 class LinkedList {
@@ -33,3 +33,15 @@ class LinkedList {
         tail = newNode
     }
 }
+
+extension LinkedList: CustomStringConvertible {
+    var description: String {
+        return head?.description ?? "nil"
+    }
+}
+
+let germanCars = LinkedList()
+germanCars.append("Volkswagen")
+germanCars.append("Porsche")
+germanCars.append("Audi")
+print(germanCars)
