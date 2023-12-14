@@ -23,4 +23,8 @@ extension Node: CustomStringConvertible {
 struct Queue {
     var head: Node?
     var tail: Node?
+    
+    func peek() -> String? {
+        return head?.data
+    }
 }
