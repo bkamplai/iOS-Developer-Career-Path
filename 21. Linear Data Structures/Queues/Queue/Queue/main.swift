@@ -27,4 +27,17 @@ struct Queue {
     func peek() -> String? {
         return head?.data
     }
+    
+    mutating func enqueue(_ data: String) {
+        let newNode = Node(data: data)
+        
+        guard let lastNode = tail else {
+            head = newNode
+            tail = newNode
+            return
+        }
+        
+        lastNode.next = newNode
+        tail = newNode
+    }
 }
