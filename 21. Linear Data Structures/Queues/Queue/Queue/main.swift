@@ -57,3 +57,22 @@ struct Queue {
         return removedNode
     }
 }
+
+extension Queue: CustomStringConvertible {
+    var description: String {
+        guard let firstNode = head else { return "Nothing in the queue" }
+        return "(Front) \(firstNode) (Back)"
+    }
+}
+
+var myQueue = Queue()
+print(myQueue)              //Prints: Nothing in the queue
+myQueue.enqueue("Alice")
+myQueue.enqueue("Bob")
+print(myQueue)              //Prints: (Front) Alice -> Bob -> nil (Back)
+print(myQueue.peek()!)      //Prints: Alice
+myQueue.dequeue()
+print(myQueue)              //Prints: (Front) Bob -> nil (Back)
+print(myQueue.peek()!)      //Prints: Bob
+myQueue.dequeue()
+print(myQueue)              //Prints: Nothing in the queue
