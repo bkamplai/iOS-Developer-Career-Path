@@ -6,10 +6,10 @@
 //
 
 struct HashTable {
-    private var values: [String]
+    private var buckets: [[(String, String)]]
     
     public init(capacity: Int) {
-        values = Array(repeating: "", count: capacity)
+        buckets = Array(repeating: [], count: capacity)
     }
     
     public subscript(key: String) -> String? {
@@ -26,22 +26,31 @@ struct HashTable {
     }
     
     private func index(for key: String) -> Int {
-        return abs(key.hashValue) % values.count
+        return abs(key.hashValue) % buckets.count
     }
     
     private mutating func update(value: String, for key: String) {
-        let elementIndex = index(for: key)
-        values[elementIndex] = value
+        let bucketIndex = index(for: key)
+        if let (elementIndex, _) = buckets[bucketIndex].enumerated().first(where: { $0.element.0 == key }) {
+            buckets[bucketIndex][elementIndex] = (key, value)
+        } else {
+            buckets[bucketIndex].append((key, value))
+        }
     }
     
     private func value(for key: String) -> String {
-        let elementIndex = index(for: key)
-        return values[elementIndex]
+        let bucketIndex = index(for: key)
+        if let (_, currentValue) = buckets[bucketIndex].enumerated().first(where: { $0.element.0 == key }) {
+            return currentValue.1
+        }
+        return ""
     }
     
     private mutating func removeValue(for key: String) {
-        let elementIndex = index(for: key)
-        values[elementIndex] = ""
+        let bucketIndex = index(for: key)
+        if let (elementIndex, _) = buckets[bucketIndex].enumerated().first(where: { $0.element.0 == key }) {
+            buckets[bucketIndex].remove(at: elementIndex)
+        }
     }
 }
 
