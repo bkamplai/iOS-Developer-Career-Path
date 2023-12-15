@@ -54,8 +54,10 @@ struct HashTable {
     }
 }
 
-var hashTable = HashTable(capacity: 5)
-hashTable["Thor"] = "Strongest Avenger"
-print(hashTable["Thor"]!)   //Prints: Strongest Avenger
-hashTable["Thor"] = nil
-print(hashTable["Thor"]!)   //Prints: ""
+var animalSoundsHashTable = HashTable(capacity: 15)
+animalSoundsHashTable["Dog"] = "Bark"
+animalSoundsHashTable["Cat"] = "Meow"
+animalSoundsHashTable["Lion"] = "Roar"
+print(animalSoundsHashTable["Dog"]!)    //Prints: Bark
+print(animalSoundsHashTable["Cat"]!)    //Prints: Meow
+print(animalSoundsHashTable["Lion"]!)   //Prints: Roar
