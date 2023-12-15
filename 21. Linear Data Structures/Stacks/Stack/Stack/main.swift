@@ -45,11 +45,16 @@ struct Stack {
         list.addToHead(str)
         print("Added \(str)!")
     }
+    
+    func peek() -> String? {
+        guard let node = list.head else { return nil }
+        return node.data
+    }
 }
 
 var dishes = Stack()
-print(dishes.isEmpty)       //Prints: true
+print("Top dish: \(dishes.peek() ?? "stack is empty")") //Prints: Top dish: stack is empty
 dishes.push("blue plate")
 dishes.push("white plate")
 dishes.push("yellow plate")
-print(dishes.isEmpty)       //Prints: false
+print("Top dish: \(dishes.peek() ?? "stack is empty")") //Prints: Top dish: yellow plate
