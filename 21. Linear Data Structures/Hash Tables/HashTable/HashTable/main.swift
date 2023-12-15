@@ -16,6 +16,8 @@ struct HashTable {
         set {
             if let value = newValue {
                 update(value: value, for: key)
+            } else {
+                removeValue(for: key)
             }
         }
         get {
@@ -36,8 +38,15 @@ struct HashTable {
         let elementIndex = index(for: key)
         return values[elementIndex]
     }
+    
+    private mutating func removeValue(for key: String) {
+        let elementIndex = index(for: key)
+        values[elementIndex] = ""
+    }
 }
 
 var hashTable = HashTable(capacity: 5)
 hashTable["Thor"] = "Strongest Avenger"
 print(hashTable["Thor"]!)   //Prints: Strongest Avenger
+hashTable["Thor"] = nil
+print(hashTable["Thor"]!)   //Prints: ""
