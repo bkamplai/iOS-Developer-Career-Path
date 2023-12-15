@@ -13,7 +13,7 @@ struct HashTable {
     }
     
     private func index(for key: String) -> Int {
-        return abs(key.hashValue)
+        return abs(key.hashValue) % values.count
     }
     
     public func testIndex() {
