@@ -40,4 +40,20 @@ struct Queue {
         lastNode.next = newNode
         tail = newNode
     }
+    
+    mutating func dequeue() -> String? {
+        var removedNode: String?
+        
+        if let firstNode = head {
+            removedNode = firstNode.data
+        }
+        
+        if head === tail {
+            tail = nil
+        }
+        
+        head = head?.next
+        
+        return removedNode
+    }
 }
