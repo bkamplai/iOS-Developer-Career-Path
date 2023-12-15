@@ -19,7 +19,7 @@ struct HashTable {
             }
         }
         get {
-            return ""
+            return value(for: key)
         }
     }
     
@@ -32,12 +32,12 @@ struct HashTable {
         values[elementIndex] = value
     }
     
-    public func testIndex() {
-        let test = "Codecademy"
-        let hashValue = index(for: test)
-        print(hashValue)
+    private func value(for key: String) -> String {
+        let elementIndex = index(for: key)
+        return values[elementIndex]
     }
 }
 
-let hashTable = HashTable(capacity: 5)
-hashTable.testIndex()
+var hashTable = HashTable(capacity: 5)
+hashTable["Thor"] = "Strongest Avenger"
+print(hashTable["Thor"]!)   //Prints: Strongest Avenger
