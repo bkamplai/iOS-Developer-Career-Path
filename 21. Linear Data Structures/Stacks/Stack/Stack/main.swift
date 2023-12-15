@@ -40,7 +40,16 @@ struct Stack {
     var isEmpty: Bool {
         return list.head == nil
     }
+    
+    mutating func push(_ str: String) {
+        list.addToHead(str)
+        print("Added \(str)!")
+    }
 }
 
 var dishes = Stack()
-print(dishes.isEmpty)   //Prints: true
+print(dishes.isEmpty)       //Prints: true
+dishes.push("blue plate")
+dishes.push("white plate")
+dishes.push("yellow plate")
+print(dishes.isEmpty)       //Prints: false
