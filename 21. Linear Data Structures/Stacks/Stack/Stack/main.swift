@@ -37,11 +37,24 @@ class LinkedList {
 struct Stack {
     private let list = LinkedList()
     
+    private var size = 0
+    private var maxSize: Int
+    
+    init(maxSize: Int = 2) {
+        self.maxSize = maxSize
+    }
+    
     var isEmpty: Bool {
-        return list.head == nil
+        return size == 0
     }
     
     mutating func push(_ str: String) {
+        guard size < maxSize else {
+            print("The stack is full! No room to add \(str).")
+            return
+        }
+        
+        size += 1
         list.addToHead(str)
         print("Added \(str)!")
     }
@@ -57,6 +70,7 @@ struct Stack {
             return nil
         }
         
+        size -= 1
         print("Removed \(node.data)")
         return node.data
     }
@@ -67,7 +81,7 @@ print("Top dish: \(dishes.peek() ?? "stack is empty")") //Prints: Top dish: stac
 dishes.push("blue plate")
 dishes.push("white plate")
 dishes.push("yellow plate")
-print("Top dish: \(dishes.peek() ?? "stack is empty")") //Prints: Top dish: yellow plate
+print("Top dish: \(dishes.peek() ?? "stack is empty")") //Prints: Top dish: white plate
 _ = dishes.pop()
 _ = dishes.pop()
 _ = dishes.pop()
