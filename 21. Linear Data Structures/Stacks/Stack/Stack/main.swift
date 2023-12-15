@@ -50,6 +50,16 @@ struct Stack {
         guard let node = list.head else { return nil }
         return node.data
     }
+    
+    mutating func pop() -> String? {
+        guard let node = list.removeHead() else {
+            print("Nothing left to remove!")
+            return nil
+        }
+        
+        print("Removed \(node.data)")
+        return node.data
+    }
 }
 
 var dishes = Stack()
@@ -58,3 +68,7 @@ dishes.push("blue plate")
 dishes.push("white plate")
 dishes.push("yellow plate")
 print("Top dish: \(dishes.peek() ?? "stack is empty")") //Prints: Top dish: yellow plate
+_ = dishes.pop()
+_ = dishes.pop()
+_ = dishes.pop()
+_ = dishes.pop()
