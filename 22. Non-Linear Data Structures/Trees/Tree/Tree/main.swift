@@ -42,6 +42,12 @@ extension TreeNode: Equatable {
     }
 }
 
+extension TreeNode: CustomStringConvertible {
+    var description: String {
+        return "Data: \(data)\n\t# of children: \(children.count)\n\t\(children.map { $0.data })"
+    }
+}
+
 var root = TreeNode(data: "Planting my first seed!")
 print(root.data)                                                    //Prints: Planting my first seed!
 print(root.children.isEmpty)                                        //Prints: true
@@ -89,3 +95,5 @@ clifford.addChild(puppy2)
 print("Clifford has \(clifford.children.count) children.")          //Prints: Clifford has 2 children
 clifford.removeChild(puppy1)
 print("Now Clifford only has \(clifford.children.count) child.")    //Prints: Now Clifford only has 1 child.
+print(clifford)                                                     //Prints: Data: Clifford the Big Red Dog \n\t # of children: 2 \n\t ["Fido", "Max"]
+print(puppy2)                                                       //Prints: Data: Max \n\t # of children: 0 \n\t []
