@@ -48,6 +48,26 @@ extension TreeNode: CustomStringConvertible {
     }
 }
 
+class Tree {
+    var root: TreeNode
+    
+    init(root: TreeNode) {
+        self.root = root
+    }
+    
+    func print() {
+        printFrom(root)
+    }
+    
+    func printFrom(_ currentNode: TreeNode, _ depth: Int = 0) {
+        let depthMarker = String(repeating: "--|", count: depth)
+        Swift.print("\(depthMarker)\(currentNode)")
+        for child in currentNode.children {
+            printFrom(child, depth + 1)
+        }
+    }
+}
+
 var root = TreeNode(data: "Planting my first seed!")
 print(root.data)                                                    //Prints: Planting my first seed!
 print(root.children.isEmpty)                                        //Prints: true
@@ -97,3 +117,8 @@ clifford.removeChild(puppy1)
 print("Now Clifford only has \(clifford.children.count) child.")    //Prints: Now Clifford only has 1 child.
 print(clifford)                                                     //Prints: Data: Clifford the Big Red Dog \n\t # of children: 2 \n\t ["Fido", "Max"]
 print(puppy2)                                                       //Prints: Data: Max \n\t # of children: 0 \n\t []
+
+let poeFamilyTree = Tree(root: patriarch)
+poeFamilyTree.printFrom(child4)
+print()
+poeFamilyTree.print()
