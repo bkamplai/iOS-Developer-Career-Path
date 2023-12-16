@@ -21,6 +21,19 @@ class TreeNode {
     func addChild(_ newChildData: String) {
         children.append(TreeNode(data: newChildData))
     }
+    
+    func removeChild(_ nodeToRemove: TreeNode) {
+        if children.isEmpty {
+            return
+        } else if children.contains(nodeToRemove) {
+            children.removeAll() { $0 == nodeToRemove }
+            return
+        } else {
+            for child in children {
+                child.removeChild(nodeToRemove)
+            }
+        }
+    }
 }
 
 extension TreeNode: Equatable {
@@ -30,12 +43,12 @@ extension TreeNode: Equatable {
 }
 
 var root = TreeNode(data: "Planting my first seed!")
-print(root.data)                //Prints: Planting my first seed!
-print(root.children.isEmpty)    //Prints: true
+print(root.data)                                                    //Prints: Planting my first seed!
+print(root.children.isEmpty)                                        //Prints: true
 var branch1 = TreeNode(data: "Your tree is ")
 root.addChild(branch1)
 root.addChild("growing every day.")
-print(root.children.isEmpty)    //Prints: false
+print(root.children.isEmpty)                                        //Prints: false
 
 // E. A. Poe Family Tree
 var patriarch = TreeNode(data: "David Poe")
@@ -65,5 +78,14 @@ child4.addChild(grandchild3)
 child6.addChild(grandchild4)
 child6.addChild(grandchild5)
 child6.addChild(grandchild6)
-print(patriarch == child4)      //Prints: false
-print(child2 == grandchild1)    //Prints: true
+print(patriarch == child4)                                          //Prints: false
+print(child2 == grandchild1)                                        //Prints: true
+
+var clifford = TreeNode(data: "Clifford the Big Red Dog")
+var puppy1 = TreeNode(data: "Fido")
+var puppy2 = TreeNode(data: "Max")
+clifford.addChild(puppy1)
+clifford.addChild(puppy2)
+print("Clifford has \(clifford.children.count) children.")          //Prints: Clifford has 2 children
+clifford.removeChild(puppy1)
+print("Now Clifford only has \(clifford.children.count) child.")    //Prints: Now Clifford only has 1 child.
