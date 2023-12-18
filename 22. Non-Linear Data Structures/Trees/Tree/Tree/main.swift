@@ -77,6 +77,16 @@ class Tree {
             depthFirstTraversal(startingAtNode: child)
         }
     }
+    
+    func breadthFirstTraversal() {
+        var queue = [TreeNode]()
+        queue.append(root)
+        while !queue.isEmpty {
+            let currentNode = queue.removeFirst()
+            Swift.print("\(currentNode) ", terminator: "")
+            queue.append(contentsOf: currentNode.children)
+        }
+    }
 }
 
 var root = TreeNode(data: "Planting my first seed!")
@@ -153,5 +163,7 @@ sansa.addChild(flora)
 daina.addChildren([finnegan, pepeduke])
 let familyTree = Tree(root: matriarch)
 familyTree.depthFirstTraversal(startingAtNode: matriarch)
+print()
+familyTree.breadthFirstTraversal()
 print()
 familyTree.print()
