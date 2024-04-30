@@ -25,7 +25,28 @@ class MinHeap {
     }
     
     private func heapifyUp() {
-        
+        var currentIndex = size - 1
+        while currentIndex > 0 && heap[currentIndex] < heap[parentIndex(of: currentIndex)] {
+            print("Heapifying (up) elements at index: \(currentIndex) & \(parentIndex(of: currentIndex))")
+            heap.swapAt(currentIndex, parentIndex(of: currentIndex))
+            currentIndex = parentIndex(of: currentIndex)
+        }
+    }
+    
+    private func findLeftChildIndex(of index: Int) -> Int {
+        return (2 * index) + 1
+    }
+    
+    private func findRightChildIndex(of index: Int) -> Int {
+        return (2 * index) + 2
+    }
+    
+    private func parentIndex(of index: Int) -> Int {
+        return (index - 1) / 2
+    }
+    
+    private func indexExists(_ index: Int) -> Bool {
+        return index < size
     }
 }
 
