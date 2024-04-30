@@ -24,6 +24,14 @@ class MinHeap {
         heapifyUp()
     }
     
+    func getTask() {
+        if heap.isEmpty {
+            print("Your task list is empty, good job!")
+        } else {
+            print("Your next task is: \(heap[0])")
+        }
+    }
+    
     private func heapifyUp() {
         var currentIndex = size - 1
         while currentIndex > 0 && heap[currentIndex] < heap[parentIndex(of: currentIndex)] {
@@ -99,6 +107,11 @@ extension TaskNode: Comparable, CustomStringConvertible {
 let toDoList: MinHeap = MinHeap();
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+toDoList.getTask()
 toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
  toDoList.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
+toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
+toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
+toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
+toDoList.getTask()
  print(toDoList)
