@@ -50,6 +50,25 @@ class MinHeap {
         }
     }
     
+    private func hasOlderChildren(_ currentIndex: Int) -> (Bool, Int) {
+        var olderChild = false
+        var olderChildIndex = 0
+        let leftChildIndex = findLeftChildIndex(of: currentIndex)
+        let rightChildIndex = findRightChildIndex(of: currentIndex)
+        
+        if indexExists(leftChildIndex) && heap[currentIndex] > heap[leftChildIndex] {
+            olderChild = true
+            olderChildIndex = leftChildIndex
+        }
+        
+        if indexExists(rightChildIndex) && heap[currentIndex] > heap[rightChildIndex] && heap[rightChildIndex] < heap[leftChildIndex] {
+            olderChild = true
+            olderChildIndex = rightChildIndex
+        }
+        
+        return (olderChild, olderChildIndex)
+    }
+    
     private func findLeftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
     }
