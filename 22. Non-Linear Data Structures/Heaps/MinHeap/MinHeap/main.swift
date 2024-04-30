@@ -38,6 +38,7 @@ class MinHeap {
         } else {
             heap.swapAt(0, size - 1)
             print("Removing: \(heap.remove(at: size - 1))")
+            heapifyDown()
         }
     }
     
@@ -47,6 +48,18 @@ class MinHeap {
             print("Heapifying (up) elements at index: \(currentIndex) & \(parentIndex(of: currentIndex))")
             heap.swapAt(currentIndex, parentIndex(of: currentIndex))
             currentIndex = parentIndex(of: currentIndex)
+        }
+    }
+    
+    private func heapifyDown() {
+        var currentIndex = 0
+        var toSwap: (needsToSwap: Bool, olderChildIndex: Int) = hasOlderChildren(currentIndex)
+        
+        while toSwap.needsToSwap == true {
+            print("Heapifying (down) elements at index: \(currentIndex) & \(toSwap.olderChildIndex)")
+            heap.swapAt(currentIndex, toSwap.olderChildIndex)
+            currentIndex = toSwap.olderChildIndex
+            toSwap = hasOlderChildren(currentIndex)
         }
     }
     
@@ -142,6 +155,13 @@ toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "
 toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
 toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
 toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
+toDoList.add(task: "Review Swift Fundamentals", dueDate: dateFormatter.date(from: "04/28/2000 19:00")!)
+toDoList.add(task: "Finish Lesson on Algorithms", dueDate: dateFormatter.date(from: "03/22/2000 13:45")!)
+toDoList.add(task: "Apply for Job", dueDate: dateFormatter.date(from: "06/17/2044 12:55")!)
+toDoList.add(task: "Finish Interview Prep", dueDate: dateFormatter.date(from: "07/25/2046 11:05")!)
+toDoList.add(task: "Complete Code Review", dueDate: dateFormatter.date(from: "10/29/2012 15:30")!)
+toDoList.add(task: "Relax", dueDate: dateFormatter.date(from: "01/11/2100 19:00")!)
 toDoList.getTask()
+toDoList.finishTask()
 toDoList.finishTask()
  print(toDoList)
