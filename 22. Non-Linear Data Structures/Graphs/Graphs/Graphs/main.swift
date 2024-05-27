@@ -112,3 +112,19 @@ graph2.addEdge(from: getOn, to: pedal)
 graph2.addEdge(from: pedal, to: fall)
 graph2.addEdge(from: fall, to: getOn)
 graph2.printGraph()
+
+// Review
+let atlanta = GraphNode(data: "Atlanta")
+let newYork = GraphNode(data: "New York")
+let chicago = GraphNode(data: "Chicago")
+let orlando = GraphNode(data: "Orlando")
+let losAngeles = GraphNode(data: "Los Angeles")
+
+let graph3 = Graph(nodes: [atlanta, newYork, chicago, orlando, losAngeles])
+
+graph3.addEdges(from: atlanta, to: [(node: newYork, isBidirectional: false, weight: 250), (node: orlando, isBidirectional: false, weight: 80)])
+graph3.addEdges(from: orlando, to: [(node: atlanta, isBidirectional: false, weight: 100), (node: newYork, isBidirectional: false, weight: 400), (node: chicago, isBidirectional: false, weight: 200)])
+graph3.addEdges(from: losAngeles, to: [(node: chicago, isBidirectional: false, weight: 125), (node: atlanta, isBidirectional: false, weight:250)])
+graph3.addEdge(from: chicago, to: newYork, isBidirectional: false, weight: 190)
+graph3.addEdges(from: newYork, to: [(node: losAngeles, isBidirectional: false, weight: 400), (node: atlanta, isBidirectional: false, weight: 200)])
+graph3.printGraph()
