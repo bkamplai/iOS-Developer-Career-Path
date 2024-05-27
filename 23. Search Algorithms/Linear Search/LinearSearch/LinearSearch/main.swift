@@ -5,18 +5,17 @@
 //  Created by Brandon Kamplain on 5/27/24.
 //
 
-func firstIndex<T: Equatable>(of target: T, in arr: [T]) -> Int? {
+import Foundation
+
+func allIndices<T: Equatable>(matching target: T, in arr: [T]) -> [Int] {
+    var matches = [Int]()
     for (index, value) in arr.enumerated() where value == target {
-        return index
+        matches.append(index)
     }
-    return nil
+    return matches
 }
 
-let values = [10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
-let targetValue = 100//33
+let tourLocations = ["New York City", "Los Angeles", "Bangkok", "Istanbul", "London", "New York City", "Toronto"]
+let targetCity = "New York City"
 
-if let index = firstIndex(of: targetValue, in: values) {
-    print("Value found at index \(index)")
-} else {
-    print("Value not found")
-}
+print(allIndices(matching: targetCity, in: tourLocations))
