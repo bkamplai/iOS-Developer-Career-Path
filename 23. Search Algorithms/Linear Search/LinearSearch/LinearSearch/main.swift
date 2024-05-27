@@ -12,8 +12,11 @@ func firstIndex<T: Equatable>(of target: T, in arr: [T]) -> Int? {
     return nil
 }
 
-let values = [5, 2, 4, 7]
-let targetValue = 2
-let index = firstIndex(of: targetValue, in: values)
+let values = [10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
+let targetValue = 100//33
 
-print("index equals \(index!)")
+if let index = firstIndex(of: targetValue, in: values) {
+    print("Value found at index \(index)")
+} else {
+    print("Value not found")
+}
