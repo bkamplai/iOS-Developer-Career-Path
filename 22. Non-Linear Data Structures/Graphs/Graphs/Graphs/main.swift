@@ -72,4 +72,12 @@ class Graph {
             addEdge(from: nodeOne, to: node)
         }
     }
+    
+    func removeNode(_ node: GraphNode) {
+        if let index = nodes.firstIndex(where: {$0 == node}) {
+            nodes.remove(at: index)
+        }
+        edges = edges.filter {$0.nodeOne != node || $0.nodeTwo != node}
+        nodes.forEach {$0.removeNeighbor(node)}
+    }
 }
