@@ -81,3 +81,16 @@ class Graph {
         nodes.forEach {$0.removeNeighbor(node)}
     }
 }
+
+let car = GraphNode(data: "Car")
+let bus = GraphNode(data: "Bus")
+let gasStation = GraphNode(data: "Gas Station")
+let busStop = GraphNode(data: "Bus Stop")
+let work = GraphNode(data: "Work")
+
+let graph = Graph(nodes: [car, bus, gasStation, busStop, work])
+graph.addEdge(from: car, to: gasStation)
+graph.addEdge(from: gasStation, to: work)
+graph.addEdge(from: bus, to: busStop)
+graph.addEdge(from: busStop, to: work)
+graph.printGraph()
