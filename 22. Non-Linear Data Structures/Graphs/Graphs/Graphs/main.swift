@@ -8,10 +8,12 @@
 struct GraphEdge {
     let nodeOne: GraphNode
     let nodeTwo: GraphNode
+    var weight: Int? = nil
     
-    init(nodeOne: GraphNode, nodeTwo: GraphNode) {
+    init(nodeOne: GraphNode, nodeTwo: GraphNode, weight: Int? = nil) {
         self.nodeOne = nodeOne
         self.nodeTwo = nodeTwo
+        self.weight = weight
     }
 }
 
@@ -62,18 +64,18 @@ class Graph {
         }
     }
     
-    func addEdge(from nodeOne: GraphNode, to nodeTwo: GraphNode, isBidirectional: Bool = true) {
-        edges.append(GraphEdge(nodeOne: nodeOne, nodeTwo: nodeTwo))
+    func addEdge(from nodeOne: GraphNode, to nodeTwo: GraphNode, isBidirectional: Bool = true, weight: Int? = nil) {
+        edges.append(GraphEdge(nodeOne: nodeOne, nodeTwo: nodeTwo, weight: weight))
         nodeOne.addNeighbor(nodeTwo)
         if isBidirectional {
-            edges.append(GraphEdge(nodeOne: nodeTwo, nodeTwo: nodeOne))
+            edges.append(GraphEdge(nodeOne: nodeTwo, nodeTwo: nodeOne, weight: weight))
             nodeTwo.addNeighbor(nodeOne)
         }
     }
     
-    func addEdges(from nodeOne: GraphNode, to neighboringNodes: [(node: GraphNode, isBidirectional: Bool)]) {
-        for (node, isBidirectional) in neighboringNodes {
-            addEdge(from: nodeOne, to: node, isBidirectional: isBidirectional)
+    func addEdges(from nodeOne: GraphNode, to neighboringNodes: [(node: GraphNode, isBidirectional: Bool, weight: Int?)]) {
+        for (node, isBidirectional, weight) in neighboringNodes {
+            addEdge(from: nodeOne, to: node, isBidirectional: isBidirectional, weight: weight)
         }
     }
     
