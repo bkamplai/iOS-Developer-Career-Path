@@ -82,6 +82,7 @@ class Graph {
     }
 }
 
+// Acyclic Graph
 let car = GraphNode(data: "Car")
 let bus = GraphNode(data: "Bus")
 let gasStation = GraphNode(data: "Gas Station")
@@ -94,3 +95,14 @@ graph.addEdge(from: gasStation, to: work)
 graph.addEdge(from: bus, to: busStop)
 graph.addEdge(from: busStop, to: work)
 graph.printGraph()
+
+// Cyclic Graph
+let getOn = GraphNode(data: "Get on Bike")
+let pedal = GraphNode(data: "Pedal Bike")
+let fall = GraphNode(data: "Fall off Bike")
+
+let graph2 = Graph(nodes: [getOn, pedal, fall])
+graph2.addEdge(from: getOn, to: pedal)
+graph2.addEdge(from: pedal, to: fall)
+graph2.addEdge(from: fall, to: getOn)
+graph2.printGraph()
