@@ -62,14 +62,18 @@ class Graph {
         }
     }
     
-    func addEdge(from nodeOne: GraphNode, to nodeTwo: GraphNode) {
+    func addEdge(from nodeOne: GraphNode, to nodeTwo: GraphNode, isBidirectional: Bool = true) {
         edges.append(GraphEdge(nodeOne: nodeOne, nodeTwo: nodeTwo))
         nodeOne.addNeighbor(nodeTwo)
+        if isBidirectional {
+            edges.append(GraphEdge(nodeOne: nodeTwo, nodeTwo: nodeOne))
+            nodeTwo.addNeighbor(nodeOne)
+        }
     }
     
-    func addEdges(from nodeOne: GraphNode, to neighboringNodes: [GraphNode]) {
-        for node in neighboringNodes {
-            addEdge(from: nodeOne, to: node)
+    func addEdges(from nodeOne: GraphNode, to neighboringNodes: [(node: GraphNode, isBidirectional: Bool)]) {
+        for (node, isBidirectional) in neighboringNodes {
+            addEdge(from: nodeOne, to: node, isBidirectional: isBidirectional)
         }
     }
     
