@@ -16,5 +16,12 @@ func binarySearch<T: Comparable>(for key: T, in arr: [T], withRange range: Range
         return midIndex
     }
     
-    return nil
+    let newRange: Range<Int>
+    
+    if arr[midIndex] < key {
+        newRange = (midIndex + 1)..<range.upperBound
+    } else {
+        newRange = range.lowerBound..<midIndex
+    }
+    return binarySearch(for: key, in: arr, withRange: newRange)
 }
