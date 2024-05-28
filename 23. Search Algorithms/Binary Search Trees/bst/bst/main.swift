@@ -28,6 +28,10 @@ class BinarySearchTree<T: Comparable & CustomStringConvertible> {
         }
     }
     
+    func contains(_ value: T) -> Bool {
+        contains(value, startingAt: root)
+    }
+    
     private func add(_ node: BinaryNode<T>, to parent: BinaryNode<T>) {
         if node.data < parent.data {
             if let existingLeftNode = parent.leftChild {
@@ -43,9 +47,34 @@ class BinarySearchTree<T: Comparable & CustomStringConvertible> {
             }
         }
     }
+    
+    private func contains(_ value: T, startingAt node: BinaryNode<T>?) -> Bool {
+        guard let parent = node else {
+            return false
+        }
+        
+        var valueFound = false
+        
+        if value < parent.data {
+            valueFound = contains(value, startingAt: parent.leftChild)
+        } else if value > parent.data {
+            valueFound = contains(value, startingAt: parent.rightChild)
+        } else {
+            valueFound = true
+        }
+        return valueFound
+    }
 }
 
 var numberTree = BinarySearchTree<Int>()
 numberTree.add(5)
 numberTree.add(6)
 numberTree.add(2)
+numberTree.add(56)
+numberTree.add(34)
+numberTree.add(12)
+numberTree.add(54)
+numberTree.add(3)
+print(numberTree.contains(12))
+print(numberTree.contains(7))
+print(numberTree.contains(54))
