@@ -18,6 +18,16 @@ class BinaryNode<T> {
 class BinarySearchTree<T: Comparable & CustomStringConvertible> {
     private var root: BinaryNode<T>?
     
+    func add(_ value: T) {
+        let node = BinaryNode(data: value)
+        
+        if let root = self.root {
+            add(node, to: root)
+        } else {
+            self.root = node
+        }
+    }
+    
     private func add(_ node: BinaryNode<T>, to parent: BinaryNode<T>) {
         if node.data < parent.data {
             if let existingLeftNode = parent.leftChild {
@@ -36,3 +46,6 @@ class BinarySearchTree<T: Comparable & CustomStringConvertible> {
 }
 
 var numberTree = BinarySearchTree<Int>()
+numberTree.add(5)
+numberTree.add(6)
+numberTree.add(2)
