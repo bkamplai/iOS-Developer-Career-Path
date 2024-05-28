@@ -15,7 +15,13 @@ class BinaryNode<T> {
     }
 }
 
-class BinarySearchTree<T: Comparable & CustomStringConvertible> {
+class BinarySearchTree<T: Comparable & CustomStringConvertible>: CustomStringConvertible {
+    var description: String {
+        var text = ""
+        inOrderTraversal(root, &text)
+        return text
+    }
+    
     private var root: BinaryNode<T>?
     
     func add(_ value: T) {
@@ -34,6 +40,13 @@ class BinarySearchTree<T: Comparable & CustomStringConvertible> {
     
     func remove(_ value: T) {
         _ = remove(value, fromParent: root)
+    }
+    
+    func inOrderTraversal(_ node: BinaryNode<T>?, _ result: inout String) {
+        guard let node = node else {return}
+        inOrderTraversal(node.leftChild, &result)
+        result += "\(node.data.description) "
+        inOrderTraversal(node.rightChild, &result)
     }
     
     private func add(_ node: BinaryNode<T>, to parent: BinaryNode<T>) {
@@ -110,8 +123,10 @@ numberTree.add(34)
 numberTree.add(12)
 numberTree.add(54)
 numberTree.add(3)
-print(numberTree.contains(12))
-print(numberTree.contains(7))
-print(numberTree.contains(54))
+print(numberTree)
+print("Tree contains 12: \(numberTree.contains(12))")
+print("Tree contains 7: \(numberTree.contains(7))")
+print("Tree contains 54: \(numberTree.contains(54))")
 numberTree.remove(12)
-print(numberTree.contains(12))
+print("Tree contains 12: \(numberTree.contains(12))")
+print(numberTree)
