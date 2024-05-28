@@ -64,6 +64,15 @@ class BinarySearchTree<T: Comparable & CustomStringConvertible> {
         }
         return valueFound
     }
+    
+    private func findMinimumValue(_ node: BinaryNode<T>) -> T {
+        var currentNode = node
+        
+        while let next = currentNode.leftChild {
+            currentNode = next
+        }
+        return currentNode.data
+    }
 }
 
 var numberTree = BinarySearchTree<Int>()
