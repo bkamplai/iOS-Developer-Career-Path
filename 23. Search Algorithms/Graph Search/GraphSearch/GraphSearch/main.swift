@@ -113,7 +113,7 @@ class Graph {
                 visitedNodes.append(currentNode)
             }
             
-            for neighbor in currentNode.neighboringNodes {
+            for neighbor in currentNode.neighboringNodes where !visitedNodes.contains(neighbor) {
                 queue.enqueue(neighbor)
             }
         }
@@ -180,4 +180,5 @@ graph.addEdge(from: node1, to: node112, isBidirectional: true)
 graph.printGraph()
 
 let dfs = graph.dfs(startingAt: node12)
-print(dfs)
+let bfs = graph.bfs(startingAt: node1)
+print("\nDepth First Search:\n\(dfs)\n\nBreadth First Search:\n\(bfs)")
