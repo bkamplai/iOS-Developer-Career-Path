@@ -102,6 +102,67 @@ class Graph {
         }
         return visitedNodes
     }
+    
+    func bfs(startingAt startNode: GraphNode) -> [GraphNode] {
+        var queue = Queue<GraphNode>()
+        var visitedNodes = [GraphNode]()
+        queue.enqueue(startNode)
+        
+        while let currentNode = queue.dequeue() {
+            if !visitedNodes.contains(currentNode) {
+                visitedNodes.append(currentNode)
+            }
+            
+            for neighbor in currentNode.neighboringNodes {
+                queue.enqueue(neighbor)
+            }
+        }
+        return visitedNodes
+    }
+}
+
+class QueueNode<Element: Equatable> {
+    var data: Element
+    var next: QueueNode<Element>?
+    
+    init(data: Element) {
+        self.data = data
+    }
+}
+
+struct Queue<Element: Equatable> {
+    var head: QueueNode<Element>?
+    var tail: QueueNode<Element>?
+    
+    func peek() -> Element? {
+        return head?.data
+    }
+    
+    mutating func enqueue(_ data: Element) {
+        let newNode = QueueNode(data: data)
+        
+        guard let lastNode = tail else {
+            head = newNode
+            tail = newNode
+            return
+        }
+        
+        lastNode.next = newNode
+        tail = newNode
+    }
+    
+    mutating func dequeue() -> Element? {
+        var removedNode: Element?
+        
+        if let firstNode = head {
+          removedNode = firstNode.data
+        }
+        if head === tail {
+          tail = nil
+        }
+        head = head?.next
+        return removedNode
+      }
 }
 
 let node1 = GraphNode(data: "1")
