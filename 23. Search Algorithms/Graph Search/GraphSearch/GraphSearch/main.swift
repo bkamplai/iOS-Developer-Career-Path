@@ -96,10 +96,27 @@ class Graph {
                 visitedNodes.append(currentNode)
             }
             
-            for neighbor in currentNode.neighboringNodes {
+            for neighbor in currentNode.neighboringNodes where !visitedNodes.contains(neighbor) {
                 stack.append(neighbor)
             }
         }
         return visitedNodes
     }
 }
+
+let node1 = GraphNode(data: "1")
+let node11 = GraphNode(data: "11")
+let node12 = GraphNode(data: "12")
+let node111 = GraphNode(data: "111")
+let node112 = GraphNode(data: "112")
+
+let graph = Graph(nodes: [node1, node11, node12, node112, node111])
+graph.addEdge(from: node1, to: node11, isBidirectional: true)
+graph.addEdge(from: node1, to: node12, isBidirectional: true)
+graph.addEdge(from: node11, to: node111, isBidirectional: true)
+graph.addEdge(from: node11, to: node112, isBidirectional: true)
+graph.addEdge(from: node1, to: node112, isBidirectional: true)
+graph.printGraph()
+
+let dfs = graph.dfs(startingAt: node12)
+print(dfs)
