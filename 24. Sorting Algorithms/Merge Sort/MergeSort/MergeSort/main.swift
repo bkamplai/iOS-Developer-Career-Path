@@ -12,5 +12,9 @@ func mergeSort(_ inputArray: [Int]) -> [Int] {
     let rightArray = Array(inputArray[midIndex..<inputArray.count])
     let leftMerge = mergeSort(leftArray)
     let rightMerge = mergeSort(rightArray)
+    return merge(leftArray: leftMerge, rightArray: rightMerge)
+}
+
+func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     return []
 }
