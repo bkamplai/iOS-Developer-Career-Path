@@ -16,3 +16,13 @@ func bubbleSort(inputArray: inout [Int]) {
         }
     }
 }
+
+var countBackwards = [10, 8, 3, 1, -5]
+print("Array 1 to sort: \(countBackwards)")
+bubbleSort(inputArray: &countBackwards)
+print("Sorted array 1: \(countBackwards)")
+
+var countForwards = [-5, 1, 3, 8, 10]
+print("Array 2 to sort: \(countForwards)")
+bubbleSort(inputArray: &countForwards)
+print("Sorted array 2: \(countForwards)")
