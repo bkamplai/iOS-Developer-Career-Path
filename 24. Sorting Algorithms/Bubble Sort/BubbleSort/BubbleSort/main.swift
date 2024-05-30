@@ -1,0 +1,14 @@
+//
+//  main.swift
+//  BubbleSort
+//
+//  Created by Brandon Kamplain on 5/29/24.
+//
+
+func bubbleSort(inputArray: inout [Int]) {
+    for i in 0..<inputArray.count {
+        for j in 1..<inputArray.count - i {
+            
+        }
+    }
+}
