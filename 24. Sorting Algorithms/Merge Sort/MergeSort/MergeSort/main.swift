@@ -34,3 +34,13 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     }
     return orderedArray + Array(leftArray.dropFirst(leftIndex)) + Array(rightArray.dropFirst(rightIndex))
 }
+
+let countBackwards = [10, 8, 3, 1, -5]
+print("Array 1 to sort: \(countBackwards)")
+let sortedArray1 = mergeSort(countBackwards)
+print(sortedArray1)
+
+let countForwards = [-5, 1, 3, 8, 10]
+print("Array 2 to sort: \(countForwards)")
+let sortedArray2 = mergeSort(countForwards)
+print(sortedArray2)
